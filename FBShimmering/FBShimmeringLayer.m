@@ -146,6 +146,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 @synthesize shimmeringBeginFadeDuration = _shimmeringBeginFadeDuration;
 @synthesize shimmeringEndFadeDuration = _shimmeringEndFadeDuration;
 @synthesize shimmeringBeginTime = _shimmeringBeginTime;
+@synthesize endLastShimmingBeforeStop = _endLastShimmingBeforeStop;
 @dynamic shimmeringHighlightWidth;
 
 - (instancetype)init
@@ -162,6 +163,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
     _shimmeringBeginFadeDuration = 0.1;
     _shimmeringEndFadeDuration = 0.3;
     _shimmeringBeginTime = FBShimmerDefaultBeginTime;
+    _endLastShimmingBeforeStop = NO;
   }
   return self;
 }
@@ -372,7 +374,7 @@ static CAAnimation *shimmer_slide_finish(CAAnimation *a)
 
   BOOL disableActions = [CATransaction disableActions];
   if (!_shimmering) {
-    if (disableActions) {
+    if (disableActions || !_endLastShimmingBeforeStop) {
       // simply remove mask
       [self _clearMask];
     } else {

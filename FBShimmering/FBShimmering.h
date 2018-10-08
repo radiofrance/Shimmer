@@ -67,5 +67,8 @@ static const float FBShimmerDefaultBeginTime = CGFLOAT_MAX;
  */
 @property (assign, nonatomic) CFTimeInterval shimmeringBeginTime;
 
+//! @abstract Set this to YES to end last shimming before stop and NO to continue. Defaults to NO.
+@property (assign, nonatomic, readwrite) BOOL endLastShimmingBeforeStop;
+
 @end
 
