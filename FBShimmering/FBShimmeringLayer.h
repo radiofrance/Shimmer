@@ -9,7 +9,7 @@
 
 #import <QuartzCore/CALayer.h>
 
-#import "FBShimmering.h"
+#import <Shimmer/FBShimmering.h>
 
 /**
   @abstract Lightweight, generic shimmering layer.
