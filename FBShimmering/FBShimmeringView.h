@@ -9,7 +9,7 @@
 
 #import <UIKit/UIView.h>
 
-#import "FBShimmering.h"
+#import <Shimmer/FBShimmering.h>
 
 /**
   @abstract Lightweight, generic shimmering view.
